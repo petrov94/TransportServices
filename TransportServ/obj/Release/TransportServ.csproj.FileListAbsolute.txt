@@ -1,0 +1,14 @@
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\Transport_Data.mdf
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\Transport_Data_log.ldf
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\TransportServ.dll.config
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\TransportServ.dll
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\TransportServ.pdb
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\EntityFramework.dll
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\EntityFramework.SqlServer.dll
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\Transport_Library.dll
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\Transport_Library.pdb
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\EntityFramework.xml
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\bin\EntityFramework.SqlServer.xml
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\obj\Release\TransportServ.csprojResolveAssemblyReference.cache
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\obj\Release\TransportServ.dll
+C:\Users\Petar\documents\visual studio 2015\Projects\ProjectPs\TransportServ\obj\Release\TransportServ.pdb

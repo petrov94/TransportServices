@@ -1,0 +1,57 @@
+﻿<Window x:Class="TransportLines.View.SearchResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:local="clr-namespace:TransportLines"
+        mc:Ignorable="d"
+        Title="SearchResult" Height="399" Width="570">
+    <Window.DataContext>
+        <local:TransportVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+
+        </Grid.ColumnDefinitions>
+
+
+
+        <m:Map Margin="10" Name="MapRoute" CredentialsProvider="AsZ4AF2YP5GKxkR54lIXGeVrqYs_wCMEnNS4vARiOllTAyj8JyFM0xiM20xDjivs" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Center="42.714637, 25.208507" ZoomLevel="7" />
+        <GroupBox Grid.Column="0" Grid.ColumnSpan="2" Header="Offer" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="Published By:" Grid.Column="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label MaxHeight="30" Grid.Row="0" FontWeight="Bold" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" >User name:</Label>
+                        <TextBlock MaxHeight="30" Background="GhostWhite" Name="UserOfferName" Text="{Binding NameUserSearch}" Grid.Column="1" Grid.Row="0" Margin="2" Opacity="0.7"/>
+                        <Label MaxHeight="30" Grid.Row="1" FontWeight="Bold" >Tel:</Label>
+                        <TextBlock MaxHeight="30" Background="GhostWhite" Name="UserOfferTel" Text="{Binding PhoneUserSearch}" Grid.Column="1" Grid.Row="1" Margin="2" Opacity="0.7"/>
+
+                    </Grid>
+
+                </GroupBox>
+                <Label Background="GhostWhite" Grid.Column="1" Margin="5" Name="OfferDetails" Opacity="0.7"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+
+</Window>

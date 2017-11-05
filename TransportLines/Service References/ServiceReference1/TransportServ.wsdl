@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TransportServ" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:9194/TransportServ.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:9194/TransportServ.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:9194/TransportServ.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Transport_Library" />
+      <xsd:import schemaLocation="http://localhost:9194/TransportServ.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITransportServ_FindCompanybyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindCompanybyName" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_FindCompanybyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindCompanybyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_FindCompanybyID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindCompanybyID" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_FindCompanybyID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindCompanybyIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_AllCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:AllCities" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_AllCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AllCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_GetAllLinesFromCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLinesFromCompany" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_GetAllLinesFromCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLinesFromCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_Citybyid_InputMessage">
+    <wsdl:part name="parameters" element="tns:Citybyid" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_Citybyid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CitybyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_CitybyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:CitybyName" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_CitybyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CitybyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_GetAllLines_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLines" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_GetAllLines_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLinesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_GetAllLinesFromTo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLinesFromTo" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_GetAllLinesFromTo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLinesFromToResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_AddnewCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddnewCompany" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_AddnewCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddnewCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_AddnewLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddnewLine" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_AddnewLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddnewLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_UpdateCompanybyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanybyName" />
+  </wsdl:message>
+  <wsdl:message name="ITransportServ_UpdateCompanybyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCompanybyNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITransportServ">
+    <wsdl:operation name="FindCompanybyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/FindCompanybyName" message="tns:ITransportServ_FindCompanybyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/FindCompanybyNameResponse" message="tns:ITransportServ_FindCompanybyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCompanybyID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/FindCompanybyID" message="tns:ITransportServ_FindCompanybyID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/FindCompanybyIDResponse" message="tns:ITransportServ_FindCompanybyID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AllCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/AllCities" message="tns:ITransportServ_AllCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/AllCitiesResponse" message="tns:ITransportServ_AllCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLinesFromCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/GetAllLinesFromCompany" message="tns:ITransportServ_GetAllLinesFromCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/GetAllLinesFromCompanyResponse" message="tns:ITransportServ_GetAllLinesFromCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Citybyid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/Citybyid" message="tns:ITransportServ_Citybyid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/CitybyidResponse" message="tns:ITransportServ_Citybyid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CitybyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/CitybyName" message="tns:ITransportServ_CitybyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/CitybyNameResponse" message="tns:ITransportServ_CitybyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/Login" message="tns:ITransportServ_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/LoginResponse" message="tns:ITransportServ_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLines">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/GetAllLines" message="tns:ITransportServ_GetAllLines_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/GetAllLinesResponse" message="tns:ITransportServ_GetAllLines_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLinesFromTo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/GetAllLinesFromTo" message="tns:ITransportServ_GetAllLinesFromTo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/GetAllLinesFromToResponse" message="tns:ITransportServ_GetAllLinesFromTo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddnewCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/AddnewCompany" message="tns:ITransportServ_AddnewCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/AddnewCompanyResponse" message="tns:ITransportServ_AddnewCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddnewLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/AddnewLine" message="tns:ITransportServ_AddnewLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/AddnewLineResponse" message="tns:ITransportServ_AddnewLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompanybyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransportServ/UpdateCompanybyName" message="tns:ITransportServ_UpdateCompanybyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransportServ/UpdateCompanybyNameResponse" message="tns:ITransportServ_UpdateCompanybyName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITransportServ" type="tns:ITransportServ">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindCompanybyName">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/FindCompanybyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCompanybyID">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/FindCompanybyID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AllCities">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/AllCities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLinesFromCompany">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/GetAllLinesFromCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Citybyid">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/Citybyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CitybyName">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/CitybyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLines">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/GetAllLines" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLinesFromTo">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/GetAllLinesFromTo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddnewCompany">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/AddnewCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddnewLine">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/AddnewLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCompanybyName">
+      <soap:operation soapAction="http://tempuri.org/ITransportServ/UpdateCompanybyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TransportServ">
+    <wsdl:port name="BasicHttpBinding_ITransportServ" binding="tns:BasicHttpBinding_ITransportServ">
+      <soap:address location="http://localhost:9194/TransportServ.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

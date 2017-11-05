@@ -1,0 +1,12 @@
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\TransportLibrary.dll.config
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\TransportLibrary.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\TransportLibrary.pdb
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\EntityFramework.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\EntityFramework.xml
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\obj\Debug\TransportLibrary.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\obj\Debug\TransportLibrary.pdb
+C:\Users\Petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\Database1.mdf
+C:\Users\Petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\bin\Debug\Database1_log.ldf
+C:\Users\Petar\documents\visual studio 2013\Projects\ProjectPS\TransportLibrary\obj\Debug\TransportLibrary.csprojResolveAssemblyReference.cache

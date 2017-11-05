@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Transport_DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Prevozis" Relationship="Self.TC_IDF" FromRole="City" ToRole="Prevozi" />
+    <NavigationProperty Name="Prevozis1" Relationship="Self.TC_IDS" FromRole="City" ToRole="Prevozi" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Byte" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserType" Relationship="Self.CU_UserType" FromRole="Companies" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="Prevozi">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="StartPoint" />
+      <PropertyRef Name="EndPoint" />
+      <PropertyRef Name="Timeof" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Company" Type="Int32" Nullable="false" />
+    <Property Name="StartPoint" Type="Int32" Nullable="false" />
+    <Property Name="EndPoint" Type="Int32" Nullable="false" />
+    <Property Name="Timeof" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Freespaces" Type="Byte" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="6" Scale="2" />
+    <NavigationProperty Name="City" Relationship="Self.TC_IDF" FromRole="Prevozi" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="Self.TC_IDS" FromRole="Prevozi" ToRole="City" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Companies" Relationship="Self.CU_UserType" FromRole="UserType" ToRole="Companies" />
+  </EntityType>
+  <Association Name="TC_IDF">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="EndPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TC_IDS">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="StartPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CU_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+    <End Role="Companies" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Companies">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Transport_DataEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Prevozis" EntityType="Self.Prevozi" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="TC_IDF" Association="Self.TC_IDF">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Prevozi" EntitySet="Prevozis" />
+    </AssociationSet>
+    <AssociationSet Name="TC_IDS" Association="Self.TC_IDS">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Prevozi" EntitySet="Prevozis" />
+    </AssociationSet>
+    <AssociationSet Name="CU_UserType" Association="Self.CU_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="Companies" EntitySet="Companies" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="Type" Type="tinyint" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prevozi">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="StartPoint" />
+      <PropertyRef Name="EndPoint" />
+      <PropertyRef Name="Timeof" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID_Company" Type="int" Nullable="false" />
+    <Property Name="StartPoint" Type="int" Nullable="false" />
+    <Property Name="EndPoint" Type="int" Nullable="false" />
+    <Property Name="Timeof" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Freespaces" Type="tinyint" Nullable="false" />
+    <Property Name="Price" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="tinyint" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="CU_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+    <End Role="Companies" Type="Self.Companies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Companies">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PC_City_End">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="EndPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PC_City_Start">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="StartPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TC_Name">
+    <End Role="Companies" Type="Self.Companies" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="ID_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TDataModelStoreContainer">
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Companies" EntityType="Self.Companies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prevozi" EntityType="Self.Prevozi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="CU_UserType" Association="Self.CU_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="Companies" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="PC_City_End" Association="Self.PC_City_End">
+      <End Role="City" EntitySet="City" />
+      <End Role="Prevozi" EntitySet="Prevozi" />
+    </AssociationSet>
+    <AssociationSet Name="PC_City_Start" Association="Self.PC_City_Start">
+      <End Role="City" EntitySet="City" />
+      <End Role="Prevozi" EntitySet="Prevozi" />
+    </AssociationSet>
+    <AssociationSet Name="TC_Name" Association="Self.TC_Name">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Prevozi" EntitySet="Prevozi" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

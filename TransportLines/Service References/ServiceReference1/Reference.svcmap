@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b11c8bb4-9cbb-4696-877a-f949f0ab6ace" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9194/TransportServ.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TransportServ.disco" MetadataType="Disco" ID="dd6fd9e3-1b47-4cce-85df-2e691debe562" SourceId="1" SourceUrl="http://localhost:9194/TransportServ.svc?disco" />
+    <MetadataFile FileName="TransportServ.xsd" MetadataType="Schema" ID="63a4bc26-c2a8-49f7-9b42-ee00c8f7e8d9" SourceId="1" SourceUrl="http://localhost:9194/TransportServ.svc?xsd=xsd2" />
+    <MetadataFile FileName="TransportServ1.xsd" MetadataType="Schema" ID="fb87528c-5d97-472e-a985-1faa1659d4cc" SourceId="1" SourceUrl="http://localhost:9194/TransportServ.svc?xsd=xsd0" />
+    <MetadataFile FileName="TransportServ2.xsd" MetadataType="Schema" ID="041f078a-e5a2-4119-9789-948aaaca878b" SourceId="1" SourceUrl="http://localhost:9194/TransportServ.svc?xsd=xsd3" />
+    <MetadataFile FileName="TransportServ.wsdl" MetadataType="Wsdl" ID="d57b2d8a-db2b-4ac3-86cf-810aeb35a1c0" SourceId="1" SourceUrl="http://localhost:9194/TransportServ.svc?wsdl" />
+    <MetadataFile FileName="TransportServ3.xsd" MetadataType="Schema" ID="3e83b9cb-37fd-44cb-8317-a98b8f5eadcf" SourceId="1" SourceUrl="http://localhost:9194/TransportServ.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

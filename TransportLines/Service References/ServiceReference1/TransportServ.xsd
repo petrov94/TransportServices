@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Transport_Library" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Transport_Library" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Company">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Company" nillable="true" type="tns:Company" />
+  <xs:complexType name="ArrayOfPrevozi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Prevozi" nillable="true" type="tns:Prevozi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrevozi" nillable="true" type="tns:ArrayOfPrevozi" />
+  <xs:complexType name="Prevozi">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndPoint" type="xs:int" />
+      <xs:element minOccurs="0" name="Freespaces" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ID_Company" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="StartPoint" type="xs:int" />
+      <xs:element minOccurs="0" name="Timeof" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Prevozi" nillable="true" type="tns:Prevozi" />
+</xs:schema>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Prevozis" Relationship="Self.PC_City_End" FromRole="City" ToRole="Prevozi" />
+    <NavigationProperty Name="Prevozis1" Relationship="Self.PC_City_Start" FromRole="City" ToRole="Prevozi" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Byte" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserType" Relationship="Self.CU_UserType" FromRole="Companies" ToRole="UserType" />
+    <NavigationProperty Name="Prevozis" Relationship="Self.TC_Name" FromRole="Companies" ToRole="Prevozi" />
+  </EntityType>
+  <EntityType Name="Prevozi">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="StartPoint" />
+      <PropertyRef Name="EndPoint" />
+      <PropertyRef Name="Timeof" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID_Company" Type="Int32" Nullable="false" />
+    <Property Name="StartPoint" Type="Int32" Nullable="false" />
+    <Property Name="EndPoint" Type="Int32" Nullable="false" />
+    <Property Name="Timeof" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Freespaces" Type="Byte" Nullable="false" />
+    <Property Name="Price" Type="Byte" />
+    <NavigationProperty Name="City" Relationship="Self.PC_City_End" FromRole="Prevozi" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="Self.PC_City_Start" FromRole="Prevozi" ToRole="City" />
+    <NavigationProperty Name="Company" Relationship="Self.TC_Name" FromRole="Prevozi" ToRole="Companies" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Byte" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Companies" Relationship="Self.CU_UserType" FromRole="UserType" ToRole="Companies" />
+  </EntityType>
+  <Association Name="PC_City_End">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="EndPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PC_City_Start">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="StartPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CU_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+    <End Role="Companies" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Companies">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TC_Name">
+    <End Role="Companies" Type="Self.Company" Multiplicity="1" />
+    <End Role="Prevozi" Type="Self.Prevozi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Companies">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Prevozi">
+        <PropertyRef Name="ID_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Prevozis" EntityType="Self.Prevozi" />
+    <EntitySet Name="UserTypes" EntityType="Self.UserType" />
+    <AssociationSet Name="PC_City_End" Association="Self.PC_City_End">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Prevozi" EntitySet="Prevozis" />
+    </AssociationSet>
+    <AssociationSet Name="PC_City_Start" Association="Self.PC_City_Start">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Prevozi" EntitySet="Prevozis" />
+    </AssociationSet>
+    <AssociationSet Name="CU_UserType" Association="Self.CU_UserType">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="Companies" EntitySet="Companies" />
+    </AssociationSet>
+    <AssociationSet Name="TC_Name" Association="Self.TC_Name">
+      <End Role="Companies" EntitySet="Companies" />
+      <End Role="Prevozi" EntitySet="Prevozis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,14 @@
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\obj\Debug\TService.csprojResolveAssemblyReference.cache
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\TService.dll.config
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\TService.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\TService.pdb
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\EntityFramework.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\EntityFramework.SqlServer.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\TransportLibrary.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\TransportLibrary.pdb
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\EntityFramework.xml
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\EntityFramework.SqlServer.xml
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\obj\Debug\TService.dll
+c:\users\petar\documents\visual studio 2013\Projects\ProjectPS\TService\obj\Debug\TService.pdb
+C:\Users\Petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\Database1.mdf
+C:\Users\Petar\documents\visual studio 2013\Projects\ProjectPS\TService\bin\Database1_log.ldf
